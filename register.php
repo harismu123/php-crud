@@ -21,6 +21,7 @@ include 'layout/header.php';
         <div class="alert alert-danger" role="alert">
           <?php echo $_SESSION['flash']; ?>
         </div>
+        <?php unset($_SESSION['flash']) ?>
       <?php endif; ?>
       <form action="action/registerAction.php" method="post">
         <div class="mb-3">

@@ -23,6 +23,12 @@ include 'layout/header.php';
         </div>
         <?php unset($_SESSION['flash']) ?>
       <?php endif; ?>
+      <?php if (isset($_SESSION['success'])) : ?>
+        <div class="alert alert-success" role="alert">
+          <?php echo $_SESSION['success']; ?>
+        </div>
+        <?php unset($_SESSION['success']) ?>
+      <?php endif; ?>
       <form action="action/authenticate.php" method="post">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
