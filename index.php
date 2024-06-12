@@ -21,6 +21,7 @@ include 'layout/header.php';
         <div class="alert alert-danger" role="alert">
           <?php echo $_SESSION['flash']; ?>
         </div>
+        <?php unset($_SESSION['flash']) ?>
       <?php endif; ?>
       <form action="action/authenticate.php" method="post">
         <div class="mb-3">
@@ -31,7 +32,8 @@ include 'layout/header.php';
           <label for="password" class="form-label">Password</label>
           <input type="password" class="form-control" id="password" name="password">
         </div>
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <p class="form-text mt-2">Belum punya akun ? <a href="register.php" class="text-decoration-none">daftar disini</a></p>
       </form>
     </div>
   </div>

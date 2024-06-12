@@ -12,8 +12,16 @@ if (mysqli_connect_errno()) {
 }
 
 if (!isset($_POST['username'], $_POST['password'])) {
-  exit('Please fill both the username and password fields!');
+  $_SESSION['flash'] = 'Please fill both the username and password fields!';
+  header('Location: ../index.php');
+  exit;
 } else {
+  if ($_POST['username'] == '' || $_POST['password'] == '') {
+    $_SESSION['flash'] = 'Please fill both the username and password fields!';
+    header('Location: ../index.php');
+    exit;
+  }
+
   $sql = "SELECT id, email FROM users WHERE username = '$_POST[username]' AND password = '$_POST[password]'";
 
   if ($result = mysqli_query($con, $sql)) {
