@@ -11,7 +11,7 @@ include 'layout/header.php';
 ?>
 
 
-<div class="mt-5">
+<div class="container mt-5">
   <div class="card w-50 mx-auto">
     <div class="card-header">
       <h1>Login</h1>
